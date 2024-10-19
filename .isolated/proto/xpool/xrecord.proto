@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package koinoor;
+
+message XRecord {
+    XRecordHeader record_header = 0;
+    XKey record_key = 1;
+    XValue record_value = 2;
+
+    message XRecordHeader {
+        int64 checksum = 0;
+        int32 version = 1;
+        int32 key_size = 2;
+        int32 value_size = 3;
+        int64 sequence_number = 4;
+        int32 record_size = 5;
+    }
+
+    message XKey {
+        bytes key = 1;
+    }
+
+    message XValue {
+        bytes value = 1;
+    }
+
+    message XKeyValuePair {
+        XKey key = 0;
+        XValue value = 1;
+    }
+}

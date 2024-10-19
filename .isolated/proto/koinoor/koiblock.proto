@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package koinoor;
+
+message KoiBlockHeader {
+    uint64 version = 0;
+    bytes prev_block_hash = 1;
+    bytes merkel_root_hash = 2;
+    int64 timestamp = 3;
+    int64 difficulty = 4;
+    int64 nonce = 5;
+}
+
+message KoiBlock {
+    KoiBlockHeader block_header = 0;
+    bytes any_clock = 1;
+    bytes block_txs = 2;
+    bytes hash = 3;
+}
+

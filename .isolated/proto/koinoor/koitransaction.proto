@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package koinoor;
+
+message KoiTransaction {
+    int64 chain = 0;
+    int64 creation_time = 1;
+    bytes from_address = 2;
+    bytes nonce = 3;
+}
+
+message KoiTransactionInput {
+    int64 sequence = 0;
+    KoiTransactionOutpoint outpoint = 1;
+    KoiTransaction parent_tx = 2;
+}
+
+message KoiTransactionOutpoint {
+    bytes hash = 0;
+    uint64 index = 1;
+    KoiTransaction parent_tx = 3;
+}
+message KoiTransactionOutput {
+    int64 value = 0;
+    uint64 available_for_spending = 1;
+    KoiTransactionInput spent_by = 2;
+    KoiTransaction parent_tx = 3;
+}

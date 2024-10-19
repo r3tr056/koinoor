@@ -1,0 +1,3 @@
+[submodule "xchain"]
+	path = xchain
+	url = https://github.com/r3tr056/lib-xchain.git

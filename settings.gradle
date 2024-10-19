@@ -1,0 +1,16 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+         // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "koinoor"
+include ':app'
+include ':xnet'
+include ':boltz'
+include ':xpool'
+include ':xchain'
+include ':xnet_android'
+include ':app:replicatingcode'
